@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Interest Calcualtor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class=header>
+            <h2>Interest Calculator</h2>
+        </div>
+        <form id="form">
+            <div class="form-control" id="startdate-container">
+                <label for="startdate">Start Date: </label>
+                <div class="startdate">
+
+                    <input id="startdate-date" name="startdate" type="text" maxlength="2" placeholder="DD"></input>
+                    <input id="startdate-month" name="startdate" type="text" maxlength="2" placeholder="MM"></input>
+                    <input id="startdate-year" name="startdate" type="text" maxlength="4" placeholder="YYYY"></input>
+                    <!---
+                    <input id="startdate-date" name="startdate" type="text" maxlength="2" placeholder="DD" value="30"></input>
+                    <input id="startdate-month" name="startdate" type="text" maxlength="2" placeholder="MM"  value="11"></input>
+                    <input id="startdate-year" name="startdate" type="text" maxlength="4" placeholder="YYYY" value="2020"></input>
+                    --->
+                    <small>Error message</small>
+                </div>
+
+            </div>
+            <div class="form-control" id="enddate-container">
+                <label for="enddate">End Date: </label>
+                <div class="enddate">
+
+                    <input id="enddate-date" name="enddate" type="text" maxlength="2" placeholder="DD"></input>
+                    <input id="enddate-month" name="enddate" type="text" maxlength="2" placeholder="MM"></input>
+                    <input id="enddate-year" name="enddate" type="text" maxlength="4" placeholder="YYYY"></input>
+
+                    <!---
+                    <input id="enddate-date" name="enddate" type="text" maxlength="2" placeholder="DD" value="30"></input>
+                    <input id="enddate-month" name="enddate" type="text" maxlength="2" placeholder="MM" value="12"></input>
+                    <input id="enddate-year" name="enddate" type="text" maxlength="4" placeholder="YYYY" value="2020"></input>
+                    -->
+                    <small>Error message</small>
+                </div>
+            </div>
+            <div class="form-control">
+                <label for="interst-rate">Interst Rate (Rs): </label>
+                <input id="interst-rate" name="interst-rate" type="text" placeholder="Ex: 1" ></input>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="amount">Amount (Rs): </label>
+                <input id="amount" name="amount" type="text" placeholder="10000"></input>
+                <small>Error message</small>
+            </div>
+            <button class="button">Calculate</button>
+            <button class="button" type="reset">Reset</button>
+        </form>
+        <div id="result">
+            <h4>Result: </h4>
+            <span id="numberofdays">Total number of days:</span>
+            <span id="interest">Total Interest: </span>
+            <span id="total-amount">Total Sum:</span>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
