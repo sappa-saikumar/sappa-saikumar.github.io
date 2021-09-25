@@ -14,10 +14,9 @@
             <div class="form-control" id="startdate-container">
                 <label for="startdate">Start Date: </label>
                 <div class="startdate">
-
-                    <input id="startdate-date" name="startdate" type="text" maxlength="2" placeholder="DD"></input>
-                    <input id="startdate-month" name="startdate" type="text" maxlength="2" placeholder="MM"></input>
-                    <input id="startdate-year" name="startdate" type="text" maxlength="4" placeholder="YYYY"></input>
+                    <input id="startdate-date" name="startdate" type="text" maxlength="2" placeholder="DD" autocomplete="off"></input>
+                    <input id="startdate-month" name="startdate" type="text" maxlength="2" placeholder="MM" autocomplete="off"></input>
+                    <input id="startdate-year" name="startdate" type="text" maxlength="4" placeholder="YYYY" autocomplete="off"></input>
                     <!---
                     <input id="startdate-date" name="startdate" type="text" maxlength="2" placeholder="DD" value="30"></input>
                     <input id="startdate-month" name="startdate" type="text" maxlength="2" placeholder="MM"  value="11"></input>
@@ -31,9 +30,9 @@
                 <label for="enddate">End Date: </label>
                 <div class="enddate">
 
-                    <input id="enddate-date" name="enddate" type="text" maxlength="2" placeholder="DD"></input>
-                    <input id="enddate-month" name="enddate" type="text" maxlength="2" placeholder="MM"></input>
-                    <input id="enddate-year" name="enddate" type="text" maxlength="4" placeholder="YYYY"></input>
+                    <input id="enddate-date" name="enddate" type="text" maxlength="2" placeholder="DD" autocomplete="off"></input>
+                    <input id="enddate-month" name="enddate" type="text" maxlength="2" placeholder="MM" autocomplete="off"></input>
+                    <input id="enddate-year" name="enddate" type="text" maxlength="4" placeholder="YYYY" autocomplete="off"></input>
 
                     <!---
                     <input id="enddate-date" name="enddate" type="text" maxlength="2" placeholder="DD" value="30"></input>
@@ -45,19 +44,26 @@
             </div>
             <div class="form-control">
                 <label for="interst-rate">Interst Rate (Rs): </label>
-                <input id="interst-rate" name="interst-rate" type="text" placeholder="Ex: 1" ></input>
+                <input id="interst-rate" name="interst-rate" type="text" placeholder="Ex: 1" autocomplete="off"></input>
                 <small>Error message</small>
             </div>
             <div class="form-control">
                 <label for="amount">Amount (Rs): </label>
-                <input id="amount" name="amount" type="text" placeholder="10000"></input>
+                <input id="amount" name="amount" type="text" placeholder="10000" autocomplete="off"></input>
                 <small>Error message</small>
             </div>
-            <button class="button">Calculate</button>
-            <button class="button" type="reset">Reset</button>
+            <button class="button1">Calculate</button>
+            <button class="button2" type="reset">Reset</button>
         </form>
-        <div id="result">
-            <h4>Result: </h4>
+        
+        <h2 id="result-header">Result: </h2>  
+        <div id="result-container">   
+            
+            <!--- 
+            <div id= "result">
+                <h2>Result: </h2>
+            </div> 
+            --->
             <span id="numberofdays">Total number of days:</span>
             <span id="interest">Total Interest: </span>
             <span id="total-amount">Total Sum:</span>
