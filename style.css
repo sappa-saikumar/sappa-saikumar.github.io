@@ -57,7 +57,7 @@ body {
 .form-control > input:hover, .form-control > div> input:hover,
 .form-control > input:focus, .form-control > div> input:focus  {
     outline: 0px;
-    border-color: #000000;
+    border-color: black;
 }
 #startdate-year, #enddate-year, #startdate-month, #startdate-date,
 #enddate-year, #enddate-month, #enddate-date {  
@@ -76,13 +76,20 @@ body {
     border-color: #e74c3c;
 }
 
-#amount{
+#amount, #amount-container i, #amount-container small{
     position: relative;
     left: 26px;
 }
 
-small {
+.error{
     visibility: hidden;
+}
+
+.error.failure{
+    visibility: visible;
+    font-size: 15px;
+    font-weight:bold;
+    color: #e74c3c
 }
 .button1, .button2 {
     background-color: white;
@@ -128,4 +135,18 @@ small {
     font-weight: bold;
     font-size: 20px;
     color: black;
+}
+
+.icon{
+    visibility: hidden;
+}
+
+i[class~=fa-check-circle]{ 
+    visibility: visible;
+    color:green;
+}
+
+i[class~=fa-times-circle]{ 
+    visibility: visible;
+    color:#e74c3c;
 }
