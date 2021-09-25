@@ -8,9 +8,25 @@ let endDate_Year = document.getElementById("enddate-year");
 let interestRate = document.getElementById("interst-rate");
 let amount = document.getElementById("amount");
 let form1 = document.getElementById("form");
-let totalInterst;
-let totalSum;
-let days;
+
+//Icons
+let startDate_Icon= document.querySelector("#startdate-container i");
+let endDate_Icon= document.querySelector("#enddate-container i");
+let amount_Icon= document.querySelector("#amount-container i");
+let interestRate_Icon= document.querySelector("#interst-rate-container i");
+
+//Error messages
+let startDate_Error= document.querySelector("#startdate-container small");
+let endDate_Error= document.querySelector("#enddate-container small");
+let amount_Error= document.querySelector("#amount-container small");
+let interestRate_Error= document.querySelector("#interst-rate-container small");
+
+//Variables
+let date1_FullStartDate;
+let date2_FullEndDate;
+let totalInterst=0;
+let totalSum=0;
+let days=0;
 
 form1.addEventListener("submit", e => {
     e.preventDefault();
@@ -34,8 +50,7 @@ function checkInputs() {
     let interestRateValue = parseInt(interestRate.value.trim());
     let amountValue = parseInt(amount.value.trim());
 
-    console.log("Loop vlaue:"+startDate_DateValue);
-    if (!isNaN(startDate_DateValue)) {
+    if (!isNaN(startDate_DateValue) ) {
         setSuccess(startDate_Date);
     } else {
         setError(startDate_Date);
@@ -51,6 +66,12 @@ function checkInputs() {
         setSuccess(startDate_Year);
     } else {
         setError(startDate_Year);
+    }
+
+    if (!isNaN(startDate_DateValue) && !isNaN(startDate_MonthValue) && !isNaN(startDate_YearValue)) {
+        setIconSuccess(startDate_Icon);
+    } else {
+        setIconError(startDate_Icon);
     }
 
     if (!isNaN(endDate_DateValue)) {
@@ -71,30 +92,27 @@ function checkInputs() {
         setError(endDate_Year);
     }
 
+    if (!isNaN(endDate_DateValue) && !isNaN(endDate_MonthValue) && !isNaN(endDate_YearValue)) {
+        setIconSuccess(endDate_Icon);
+    } else {
+        setIconError(endDate_Icon);
+    }
+
     if (!isNaN(interestRateValue)) {
         setSuccess(interestRate);
+        setIconSuccess(interestRate_Icon);
     } else {
         setError(interestRate);
+        setIconError(interestRate_Icon);
     }
 
     if (!isNaN(amountValue)) {
         setSuccess(amount);
+        setIconSuccess(amount_Icon);
     } else {
         setError(amount);
+        setIconError(amount_Icon);
     }
-
-
-}
-
-function backToNormal() {
-    startDate_Date.className="";
-    startDate_Month.className="";
-    startDate_Year.className="";
-    endDate_Date.className="";
-    endDate_Month.className="";
-    endDate_Year.className="";
-    interestRate.className="";
-    amount.className="";
 }
 
 function setSuccess(inputEle) {
@@ -104,6 +122,31 @@ function setError(inputEle) {
     inputEle.className = "empty";
 }
 
+function setIconSuccess(inputEle){
+    inputEle.className="fa fa-check-circle fa-lg";
+}
+
+function setIconError(inputEle, inputEle2, errorMessage){
+    inputEle.className="fa fa-times-circle fa-lg";
+    //inputEle2.style.visibility = "visible";
+}
+
+function  backToNormal() {
+    startDate_Date.className="";
+    startDate_Month.className="";
+    startDate_Year.className="";
+    endDate_Date.className="";
+    endDate_Month.className="";
+    endDate_Year.className="";
+    interestRate.className="";
+    amount.className="";
+    startDate_Icon.className="icon"
+    endDate_Icon.className="icon"
+    amount_Icon.className="icon"
+    interestRate_Icon.className="icon"  
+    update_UI_With_Result()
+}
+
 function calculate_NumberOfDays() {
 
     let full_StartDate = startDate_Month.value.trim() + "-" + startDate_Date.value.trim() + "-" + startDate_Year.value.trim();
@@ -111,10 +154,10 @@ function calculate_NumberOfDays() {
     console.log("StartDate= " + full_StartDate);
     console.log("EndDate= " + full_EndDate);
 
-    //Calculate number of days
-    let date1 = new Date(full_StartDate);
-    let date2 = new Date(full_EndDate);
-    let days = (date2.getTime() - date1.getTime()) / (24 * 60 * 60 * 1000);
+    date1_FullStartDate = new Date(full_StartDate);
+    date2_FullEndDate = new Date(full_EndDate);
+
+    let days = (date2_FullEndDate.getTime() - date1_FullStartDate.getTime()) / (24 * 60 * 60 * 1000);
     //console.log("days: " + days);
 
     return days;
@@ -146,7 +189,10 @@ function update_UI_With_Result() {
     const interestElement = document.getElementById("interest");
     const amountElement = document.getElementById("total-amount");
 
-    daysElement.innerHTML = "Total number of days: " + days;
-    interestElement.innerHTML = "Total Interest: " + parseInt(totalInterst).toLocaleString('en-In');
-    amountElement.innerHTML = "Total Sum: " + parseInt(totalSum).toLocaleString('en-IN');
+        daysElement.innerHTML = "Total number of days: " + days;
+
+        interestElement.innerHTML = "Total Interest: " + parseInt(totalInterst).toLocaleString('en-In');
+
+        amountElement.innerHTML = "Total Sum: " + parseInt(totalSum).toLocaleString('en-IN');
+
 }
