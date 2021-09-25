@@ -5,18 +5,18 @@
 }
 
 body {
-    background-color: #9b59b6;
-    background-image:url("background_img.jpg");
-    font-family: 'Open Sans', sans-serif;
+    /*background-color: rgba(22, 8, 219, 0.3);*/
+    background-image:url("images/background_img1.jpg");
+    /*font-family: 'Open Sans', sans-serif;*/
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0;
+    margin: 0; 
 }
 
-.container {
-    background-color: #fff;
+.container { 
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     height: 500px;
@@ -24,8 +24,8 @@ body {
 }
 
 .header {
-    background-color: #f7f7f7;
-    border-bottom:  1px solid #f0f0f0;
+    /*background-color: #f7f7f7;*/
+    /*border-bottom:  1px solid #f0f0f0;*/
     padding: 10px 40px;
     border-radius: 5px;
 }
@@ -41,12 +41,14 @@ body {
 }
 
 .form-control > label {
+   font-weight: bold;
    display:inline;
-   margin-bottom: 40px;
+  /* margin-bottom: 80px; */
 }
 .form-control > input, .form-control > div> input {
     display:inline;
-    border:  2px solid #f0f0f0;
+    border:  2px solid #000000;
+    /* Some special effect needs to be added*/
     border-radius: 4px;
     padding: 5px;
     transition-duration: 0.4s;
@@ -55,7 +57,7 @@ body {
 .form-control > input:hover, .form-control > div> input:hover,
 .form-control > input:focus, .form-control > div> input:focus  {
     outline: 0px;
-    border-color: #8e44ad;
+    border-color: #000000;
 }
 #startdate-year, #enddate-year, #startdate-month, #startdate-date,
 #enddate-year, #enddate-month, #enddate-date {  
@@ -84,11 +86,12 @@ small {
 }
 .button1, .button2 {
     background-color: white;
-    border: 2px solid #8e44ad;
+    border: 2px solid #000000;
     border-radius: 4px;
-    color: #8e44ad;
+    color: #000000;
     font-family: inherit;
     font-size: 15px;
+    font-weight: bold;
     text-align:center;
     padding: 5px;
     width: 20%;
@@ -99,22 +102,22 @@ small {
 }
 .button1:hover, .button1:focus, .button2:hover, .button2:focus{
     outline: 0px;
-    background-color: #8e44ad;
+    background-color: #000000;
     color: white;
 }
 
 #result-header {
     margin: 0; 
-    background-color: #f7f7f7;
-    border-top:  1px solid #f0f0f0;
-    border-bottom:  1px solid #f0f0f0;
+    /*background-color: #f7f7f7;*/
+    /*border-top:  1px solid #f0f0f0;
+    border-bottom:  1px solid #f0f0f0;*/
     padding: 10px 40px;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 #result-container {
-    background-color: #fff;
-    border-top:  1px solid #f0f0f0;
-    border-bottom:  1px solid #f0f0f0;
+    /*background-color: #fff;*/
+    /*border-top:  1px solid #f0f0f0;
+    border-bottom:  1px solid #f0f0f0;*/
     border-radius: 0px 0px 5px 5px;
     display: block;
     padding: 10px 40px 25px 40px;
@@ -122,5 +125,7 @@ small {
 #result-container span{
     display: block;
     font-family: inherit;
-    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
 }
